@@ -20,7 +20,7 @@ A Laravel-based inventory management system with authentication, product managem
 3. Create and configure the .env file:
    - cp .env.example .env
 4. Generate application key:    
-        - php artisan key:generate
+   - php artisan key:generate
 5. Run migrations and seed the database:  
     - php artisan migrate --seed
 6.Create a symbolic link for storage:
@@ -35,9 +35,6 @@ A Laravel-based inventory management system with authentication, product managem
 2. Register a new user or log in with existing credentials
 3. Navigate through the menu to manage products, categories, and brands
 
-## Testing
-To run the test:
-- php artisan test
 ## License
 
 This project is open-source and available under the MIT License. [MIT license](https://opensource.org/licenses/MIT).
