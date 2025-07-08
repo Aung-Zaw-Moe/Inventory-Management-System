@@ -19,13 +19,13 @@ A Laravel-based inventory management system with authentication, product managem
    - npm install
 3. Create and configure the .env file:
    - cp .env.example .env
- 4. Generate application key:    
-    - php artisan key:generate
- 5. Run migrations and seed the database:  
+4. Generate application key:    
+        - php artisan key:generate
+5. Run migrations and seed the database:  
     - php artisan migrate --seed
- 6.Create a symbolic link for storage:
+6.Create a symbolic link for storage:
     - php artisan storage:link
- 7. Compile frontend assets:
+7. Compile frontend assets:
     - npm run dev or npm run build
 8. Start the development server:
     - php artisan serve
