@@ -2,11 +2,50 @@
 
 @section('content')
 <div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card shadow-lg border-0" style="background-color: #f8f9fa;">
+            <div class="card-header bg-dark text-white border-0">
+                <h5 class="mb-0">
+                    <i class="fas fa-chart-line me-2"></i>Monthly Product Growth
+                </h5>
+            </div>
+            <div class="card-body">
+                <canvas id="lineChart" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow-lg border-0" style="background-color: #f8f9fa;">
+            <div class="card-header bg-dark text-white border-0">
+                <h5 class="mb-0">
+                    <i class="fas fa-chart-pie me-2"></i>Products by Category
+                </h5>
+            </div>
+            <div class="card-body">
+                <canvas id="categoryChart" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow-lg border-0" style="background-color: #f8f9fa;">
+            <div class="card-header bg-dark text-white border-0">
+                <h5 class="mb-0">
+                    <i class="fas fa-chart-pie me-2"></i>Products by Brand
+                </h5>
+            </div>
+            <div class="card-body">
+                <canvas id="brandChart" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
     <div class="col-md-6">
         <div class="card shadow-lg border-0" style="background-color: #f8f9fa;">
             <div class="card-header bg-dark text-white border-0">
                 <h5 class="mb-0">
-                    <i class="fas fa-chart-pie me-2"></i>System Overview
+                    <i class="fas fa-tachometer-alt me-2"></i>System Overview
                 </h5>
             </div>
             <div class="card-body">
@@ -70,33 +109,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row mb-4">
-    <div class="col-md-6">
-        <div class="card shadow-lg border-0 h-100" style="background-color: #f8f9fa;">
-            <div class="card-header bg-dark text-white border-0">
-                <h5 class="mb-0">
-                    <i class="fas fa-chart-pie me-2"></i>Products by Category
-                </h5>
-            </div>
-            <div class="card-body">
-                <canvas id="categoryChart" height="250"></canvas>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="card shadow-lg border-0 h-100" style="background-color: #f8f9fa;">
-            <div class="card-header bg-dark text-white border-0">
-                <h5 class="mb-0">
-                    <i class="fas fa-chart-pie me-2"></i>Products by Brand
-                </h5>
-            </div>
-            <div class="card-body">
-                <canvas id="brandChart" height="250"></canvas>
             </div>
         </div>
     </div>
@@ -185,6 +197,80 @@
 
 @push('scripts')
 <script>
+    // Line Chart - Monthly Product Growth
+    const lineCtx = document.getElementById('lineChart').getContext('2d');
+    const lineChart = new Chart(lineCtx, {
+        type: 'line',
+        data: {
+            labels: {!! json_encode($months) !!},
+            datasets: [{
+                label: 'Products Added',
+                data: {!! json_encode($productCounts) !!},
+                backgroundColor: 'rgba(78, 115, 223, 0.05)',
+                borderColor: 'rgba(78, 115, 223, 1)',
+                pointBackgroundColor: 'rgba(78, 115, 223, 1)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(78, 115, 223, 1)',
+                borderWidth: 2,
+                pointRadius: 4,
+                pointHoverRadius: 6,
+                fill: true
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        color: '#333',
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `${context.dataset.label}: ${context.raw}`;
+                        }
+                    },
+                    bodyFont: {
+                        weight: 'bold',
+                        size: 14
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#333',
+                        font: {
+                            weight: 'bold'
+                        }
+                    },
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.1)'
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: '#333',
+                        font: {
+                            weight: 'bold'
+                        }
+                    },
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.1)'
+                    }
+                }
+            }
+        }
+    });
+
     // Category Pie Chart
     const categoryCtx = document.getElementById('categoryChart').getContext('2d');
     const categoryChart = new Chart(categoryCtx, {
