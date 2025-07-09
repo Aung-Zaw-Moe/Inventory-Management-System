@@ -15,16 +15,18 @@ class DashboardController extends Controller
         $totalProducts = Product::count();
         $totalStockValue = Product::sum(DB::raw('price * quantity'));
         
-        // Get product count by category for the pie chart
+        // Get top 5 categories by product count for bar chart
         $categoriesData = Category::withCount('products')
             ->having('products_count', '>', 0)
             ->orderBy('products_count', 'desc')
+            ->limit(5)
             ->get();
             
-        // Get product count by brand for the second pie chart
+        // Get top 5 brands by product count for bar chart
         $brandsData = Brand::withCount('products')
             ->having('products_count', '>', 0)
             ->orderBy('products_count', 'desc')
+            ->limit(5)
             ->get();
         
         // Get low stock products (quantity < 10)

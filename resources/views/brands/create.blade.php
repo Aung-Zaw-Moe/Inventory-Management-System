@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="card">
-    <div class="card-header">Add New Brand</div>
+    <div class="card-header bg-secondary text-light">Add New Brand</div>
     <div class="card-body">
         <form action="{{ route('brands.store') }}" method="POST">
             @csrf

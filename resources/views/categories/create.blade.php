@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="card">
-    <div class="card-header">Add New Category</div>
+    <div class="card-header bg-secondary text-light">Add New Category</div>
     <div class="card-body">
         <form action="{{ route('categories.store') }}" method="POST">
             @csrf

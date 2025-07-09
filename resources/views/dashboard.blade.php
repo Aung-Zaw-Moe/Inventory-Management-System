@@ -2,48 +2,21 @@
 
 @section('content')
 <div class="row mb-4">
-    <div class="col-md-4">
-        <div class="card shadow-lg border-0" style="background-color: #f8f9fa;">
-            <div class="card-header bg-dark text-white border-0">
+    <div class="col-md-6">
+        <div class="card shadow-lg border-0 rounded-3">
+            <div class="card-header bg-primary text-white rounded-top">
                 <h5 class="mb-0">
                     <i class="fas fa-chart-line me-2"></i>Monthly Product Growth
                 </h5>
             </div>
             <div class="card-body">
-                <canvas id="lineChart" height="250"></canvas>
+                <canvas id="lineChart" height="300"></canvas>
             </div>
         </div>
     </div>
-    <div class="col-md-4">
-        <div class="card shadow-lg border-0" style="background-color: #f8f9fa;">
-            <div class="card-header bg-dark text-white border-0">
-                <h5 class="mb-0">
-                    <i class="fas fa-chart-pie me-2"></i>Products by Category
-                </h5>
-            </div>
-            <div class="card-body">
-                <canvas id="categoryChart" height="250"></canvas>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card shadow-lg border-0" style="background-color: #f8f9fa;">
-            <div class="card-header bg-dark text-white border-0">
-                <h5 class="mb-0">
-                    <i class="fas fa-chart-pie me-2"></i>Products by Brand
-                </h5>
-            </div>
-            <div class="card-body">
-                <canvas id="brandChart" height="250"></canvas>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row mb-4">
     <div class="col-md-6">
-        <div class="card shadow-lg border-0" style="background-color: #f8f9fa;">
-            <div class="card-header bg-dark text-white border-0">
+        <div class="card shadow-lg border-0 rounded-3">
+            <div class="card-header bg-success text-white rounded-top">
                 <h5 class="mb-0">
                     <i class="fas fa-tachometer-alt me-2"></i>System Overview
                 </h5>
@@ -51,61 +24,52 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <div class="card border-start border-primary border-4 shadow">
+                        <div class="card border-start border-primary border-4 shadow-sm h-100">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
                                         <h6 class="text-muted mb-1">Total Products</h6>
-                                        <h4 class="mb-0">{{ $totalProducts }}</h4>
+                                        <h3 class="mb-0">{{ $totalProducts }}</h3>
                                     </div>
                                     <div class="bg-primary bg-opacity-10 p-3 rounded">
-                                        <i class="fas fa-box text-primary"></i>
+                                        <i class="fas fa-box text-primary fa-2x"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <div class="card border-start border-success border-4 shadow">
+                        <div class="card border-start border-success border-4 shadow-sm h-100">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
                                         <h6 class="text-muted mb-1">Total Stock Value</h6>
-                                        <h4 class="mb-0">${{ number_format($totalStockValue, 2) }}</h4>
+                                        <h3 class="mb-0">${{ number_format($totalStockValue, 2) }}</h3>
                                     </div>
                                     <div class="bg-success bg-opacity-10 p-3 rounded">
-                                        <i class="fas fa-dollar-sign text-success"></i>
+                                        <i class="fas fa-dollar-sign text-success fa-2x"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="card shadow-lg border-0" style="background-color: #f8f9fa;">
-            <div class="card-header bg-dark text-white border-0">
-                <h5 class="mb-0">
-                    <i class="fas fa-bolt me-2"></i>Quick Actions
-                </h5>
-            </div>
-            <div class="card-body">
-                <div class="d-grid gap-3">
-                    <a href="{{ route('products.create') }}" class="btn btn-primary btn-lg shadow">
-                        <i class="fas fa-plus me-2"></i>Add New Product
-                    </a>
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <a href="{{ route('categories.create') }}" class="btn btn-outline-dark w-100 shadow-sm">
-                                <i class="fas fa-tag me-2"></i>Add Category
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="{{ route('brands.create') }}" class="btn btn-outline-info w-100 shadow-sm">
-                                <i class="fas fa-copyright me-2"></i>Add Brand
-                            </a>
+                <div class="mt-3">
+                    <div class="d-grid gap-2">
+                        <a href="{{ route('products.create') }}" class="btn btn-primary btn-lg shadow-sm">
+                            <i class="fas fa-plus me-2"></i>Add New Product
+                        </a>
+                        <div class="row g-2">
+                            <div class="col-md-6">
+                                <a href="{{ route('categories.create') }}" class="btn btn-outline-dark w-100 shadow-sm">
+                                    <i class="fas fa-tag me-2"></i>Add Category
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="{{ route('brands.create') }}" class="btn btn-outline-info w-100 shadow-sm">
+                                    <i class="fas fa-copyright me-2"></i>Add Brand
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -114,12 +78,39 @@
     </div>
 </div>
 
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card shadow-lg border-0 rounded-3 h-100">
+            <div class="card-header bg-warning text-dark rounded-top">
+                <h5 class="mb-0">
+                    <i class="fas fa-chart-bar me-2"></i>Top Categories (Product Count)
+                </h5>
+            </div>
+            <div class="card-body">
+                <canvas id="categoryChart" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card shadow-lg border-0 rounded-3 h-100">
+            <div class="card-header bg-info text-white rounded-top">
+                <h5 class="mb-0">
+                    <i class="fas fa-chart-bar me-2"></i>Top Brands (Product Count)
+                </h5>
+            </div>
+            <div class="card-body">
+                <canvas id="brandChart" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="row">
     <div class="col-md-6">
-        <div class="card shadow-lg border-0" style="background-color: #f8f9fa;">
-            <div class="card-header bg-dark text-white border-0">
+        <div class="card shadow-lg border-0 rounded-3">
+            <div class="card-header bg-danger text-white rounded-top">
                 <h5 class="mb-0">
-                    <i class="fas fa-exclamation-triangle me-2 text-warning"></i>Low Stock Products
+                    <i class="fas fa-exclamation-triangle me-2"></i>Low Stock Products (Under 10)
                 </h5>
             </div>
             <div class="card-body">
@@ -132,6 +123,7 @@
                                     <th>Category</th>
                                     <th>Brand</th>
                                     <th>Stock</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -143,7 +135,12 @@
                                     <td>{{ $product->category->name }}</td>
                                     <td>{{ $product->brand->name }}</td>
                                     <td>
-                                        <span class="badge bg-warning text-dark shadow-sm">{{ $product->quantity }}</span>
+                                        <span class="badge bg-danger text-white shadow-sm">{{ $product->quantity }}</span>
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('products.edit', $product) }}" class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -159,10 +156,10 @@
         </div>
     </div>
     <div class="col-md-6">
-        <div class="card shadow-lg border-0" style="background-color: #f8f9fa;">
-            <div class="card-header bg-dark text-white border-0">
+        <div class="card shadow-lg border-0 rounded-3">
+            <div class="card-header bg-secondary text-white rounded-top">
                 <h5 class="mb-0">
-                    <i class="fas fa-clock me-2 text-info"></i>Recently Added Products
+                    <i class="fas fa-clock me-2"></i>Recently Added Products
                 </h5>
             </div>
             <div class="card-body">
@@ -174,6 +171,7 @@
                                 <th>Category</th>
                                 <th>Price</th>
                                 <th>Stock</th>
+                                <th>Added</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -185,6 +183,7 @@
                                 <td>{{ $product->category->name }}</td>
                                 <td>${{ number_format($product->price, 2) }}</td>
                                 <td>{{ $product->quantity }}</td>
+                                <td>{{ $product->created_at->diffForHumans() }}</td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -206,20 +205,22 @@
             datasets: [{
                 label: 'Products Added',
                 data: {!! json_encode($productCounts) !!},
-                backgroundColor: 'rgba(78, 115, 223, 0.05)',
-                borderColor: 'rgba(78, 115, 223, 1)',
-                pointBackgroundColor: 'rgba(78, 115, 223, 1)',
+                backgroundColor: 'rgba(13, 110, 253, 0.1)',
+                borderColor: 'rgba(13, 110, 253, 1)',
+                pointBackgroundColor: 'rgba(13, 110, 253, 1)',
                 pointBorderColor: '#fff',
                 pointHoverBackgroundColor: '#fff',
-                pointHoverBorderColor: 'rgba(78, 115, 223, 1)',
+                pointHoverBorderColor: 'rgba(13, 110, 253, 1)',
                 borderWidth: 2,
                 pointRadius: 4,
                 pointHoverRadius: 6,
+                tension: 0.3,
                 fill: true
             }]
         },
         options: {
             maintainAspectRatio: false,
+            responsive: true,
             plugins: {
                 legend: {
                     display: true,
@@ -227,7 +228,8 @@
                     labels: {
                         color: '#333',
                         font: {
-                            weight: 'bold'
+                            weight: 'bold',
+                            size: 14
                         }
                     }
                 },
@@ -250,10 +252,11 @@
                         color: '#333',
                         font: {
                             weight: 'bold'
-                        }
+                        },
+                        stepSize: 1
                     },
                     grid: {
-                        color: 'rgba(0, 0, 0, 0.1)'
+                        color: 'rgba(0, 0, 0, 0.05)'
                     }
                 },
                 x: {
@@ -264,52 +267,50 @@
                         }
                     },
                     grid: {
-                        color: 'rgba(0, 0, 0, 0.1)'
+                        color: 'rgba(0, 0, 0, 0.05)'
                     }
                 }
             }
         }
     });
 
-    // Category Pie Chart
+    // Category Vertical Bar Chart
     const categoryCtx = document.getElementById('categoryChart').getContext('2d');
     const categoryChart = new Chart(categoryCtx, {
-        type: 'pie',
+        type: 'bar',
         data: {
             labels: {!! json_encode($categoriesData->pluck('name')) !!},
             datasets: [{
+                label: 'Number of Products',
                 data: {!! json_encode($categoriesData->pluck('products_count')) !!},
                 backgroundColor: [
-                    '#4e73df', '#1cc88a', '#36b9cc', '#f6c23e', '#e74a3b',
-                    '#5a5c69', '#858796', '#3a3b45', '#f8f9fc', '#5a5c69'
+                    'rgba(255, 159, 64, 0.7)',
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(153, 102, 255, 0.7)'
                 ],
-                hoverBackgroundColor: [
-                    '#2e59d9', '#17a673', '#2c9faf', '#dda20a', '#be2617',
-                    '#42444e', '#6b6d7d', '#2a2b33', '#dde2f1', '#42444e'
+                borderColor: [
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
                 ],
-                hoverBorderColor: "rgba(234, 236, 244, 1)",
-            }],
+                borderWidth: 1
+            }]
         },
         options: {
             maintainAspectRatio: false,
+            responsive: true,
             plugins: {
                 legend: {
-                    position: 'right',
-                    labels: {
-                        color: '#333',
-                        font: {
-                            weight: 'bold'
-                        }
-                    }
+                    display: false
                 },
                 tooltip: {
                     callbacks: {
                         label: function(context) {
-                            let label = context.label || '';
-                            let value = context.formattedValue || '';
-                            let total = context.dataset.data.reduce((a, b) => a + b, 0);
-                            let percentage = Math.round((value / total) * 100);
-                            return `${label}: ${value} (${percentage}%)`;
+                            return `${context.raw} products`;
                         }
                     },
                     bodyFont: {
@@ -317,54 +318,106 @@
                         size: 14
                     }
                 }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: '#333',
+                        font: {
+                            weight: 'bold',
+                            size: 12
+                        }
+                    },
+                    grid: {
+                        display: false
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#333',
+                        font: {
+                            weight: 'bold'
+                        },
+                        stepSize: 1
+                    },
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.05)'
+                    }
+                }
             }
         }
     });
 
-    // Brand Pie Chart
+    // Brand Vertical Bar Chart
     const brandCtx = document.getElementById('brandChart').getContext('2d');
     const brandChart = new Chart(brandCtx, {
-        type: 'pie',
+        type: 'bar',
         data: {
             labels: {!! json_encode($brandsData->pluck('name')) !!},
             datasets: [{
+                label: 'Number of Products',
                 data: {!! json_encode($brandsData->pluck('products_count')) !!},
                 backgroundColor: [
-                    '#6610f2', '#6f42c1', '#e83e8c', '#fd7e14', '#20c997',
-                    '#4e73df', '#1cc88a', '#36b9cc', '#f6c23e', '#e74a3b'
+                    'rgba(54, 162, 235, 0.7)',
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(255, 206, 86, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                    'rgba(153, 102, 255, 0.7)'
                 ],
-                hoverBackgroundColor: [
-                    '#520dc2', '#5a32a8', '#c2186b', '#d56a0b', '#17a673',
-                    '#2e59d9', '#17a673', '#2c9faf', '#dda20a', '#be2617'
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
                 ],
-                hoverBorderColor: "rgba(234, 236, 244, 1)",
-            }],
+                borderWidth: 1
+            }]
         },
         options: {
             maintainAspectRatio: false,
+            responsive: true,
             plugins: {
                 legend: {
-                    position: 'right',
-                    labels: {
-                        color: '#333',
-                        font: {
-                            weight: 'bold'
-                        }
-                    }
+                    display: false
                 },
                 tooltip: {
                     callbacks: {
                         label: function(context) {
-                            let label = context.label || '';
-                            let value = context.formattedValue || '';
-                            let total = context.dataset.data.reduce((a, b) => a + b, 0);
-                            let percentage = Math.round((value / total) * 100);
-                            return `${label}: ${value} (${percentage}%)`;
+                            return `${context.raw} products`;
                         }
                     },
                     bodyFont: {
                         weight: 'bold',
                         size: 14
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: '#333',
+                        font: {
+                            weight: 'bold',
+                            size: 12
+                        }
+                    },
+                    grid: {
+                        display: false
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#333',
+                        font: {
+                            weight: 'bold'
+                        },
+                        stepSize: 1
+                    },
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.05)'
                     }
                 }
             }

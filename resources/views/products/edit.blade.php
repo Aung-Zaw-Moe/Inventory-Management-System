@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="card">
-    <div class="card-header">Edit Product</div>
+    <div class="card-header bg-secondary text-light">Edit Product</div>
     <div class="card-body">
         <form action="{{ route('products.update', $product) }}" method="POST" enctype="multipart/form-data">
             @csrf
