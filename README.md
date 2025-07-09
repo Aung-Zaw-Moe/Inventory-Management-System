@@ -12,7 +12,7 @@ A Laravel-based inventory management system with authentication, product managem
 - Total stock value calculation
 ## Installation
 1. Clone the repository:
-   - git clone https://github.com/yourusername/inventory-system.git
+   - git clone 
    - cd inventory-system
 2. Install dependencies:  
    - composer install
