@@ -10,10 +10,41 @@ A Laravel-based inventory management system with authentication, product managem
 - Pagination
 - Soft deletes for products
 - Total stock value calculation
+
+- **User Authentication**
+  - Registration and login system
+  - Password reset functionality
+
+- **Product Management**
+  - Complete CRUD operations
+  - Image upload and storage
+  - Soft delete functionality
+  - Search and filtering
+
+- **Inventory Control**
+  - Category and Brand management
+  - Stock adjustment (increase/decrease)
+  - Real-time stock level tracking
+  - Total inventory value calculation
+
+- **Data Handling**
+  - Export to Excel functionality
+  - Pagination for large datasets
+
+## Technology Stack
+
+- **Backend**: Laravel 12
+- **Frontend**: Bootstrap, jQuery
+- **Database**: MySQL
+- ### Prerequisites
+- PHP 8.2.12+
+- Composer
+- Node.js 14.x+
+- MySQL 5.7+
 ## Installation
 1. Clone the repository:
-   - git clone 
-   - cd inventory-system
+   git clone https://github.com/Aung-Zaw-Moe/Inventory-Management-System.git
+   cd Inventory-Management-System
 2. Install dependencies:  
    - composer install
    - npm install
@@ -33,8 +64,19 @@ A Laravel-based inventory management system with authentication, product managem
 ## Usage
 1. Access the application at http://localhost:8000
 2. Register a new user or log in with existing credentials
+   - Email: admin@example.com
+   - Password: password
 3. Navigate through the menu to manage products, categories, and brands
-
+   
+## Troubleshooting
+- composer config -g -- disable-tls true
 ## License
-
 This project is open-source and available under the MIT License. [MIT license](https://opensource.org/licenses/MIT).
+
+## ဤဖိုင်တွင်:
+1. သင့်ရဲ့ GitHub repo link နဲ့ email address အပြည့်အစုံပါဝင်ပါပြီ
+2. အရင်ပေးထားတဲ့ feature တွေအားလုံးပါဝင်ပါတယ်
+3. Installation steps အားလုံးကို အစအဆုံးထည့်ပေးထားပါတယ်
+4. အသုံးပြုနည်းလမ်းညွှန်ကို ရှင်းလင်းစွာရေးထားပါတယ်
+5. SSL error ဖြေရှင်းနည်းကိုပါ ထည့်ပေးထားပါတယ်
+6. License နဲ့ contact information တွေကိုလည်း ပြည့်စုံစွာထည့်ပေးထားပါတယ်
