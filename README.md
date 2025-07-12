@@ -74,9 +74,8 @@ A Laravel-based inventory management system with authentication, product managem
 This project is open-source and available under the MIT License. [MIT license](https://opensource.org/licenses/MIT).
 
 ## ဤဖိုင်တွင်:
-1. သင့်ရဲ့ GitHub repo link နဲ့ email address အပြည့်အစုံပါဝင်ပါပြီ
-2. အရင်ပေးထားတဲ့ feature တွေအားလုံးပါဝင်ပါတယ်
-3. Installation steps အားလုံးကို အစအဆုံးထည့်ပေးထားပါတယ်
-4. အသုံးပြုနည်းလမ်းညွှန်ကို ရှင်းလင်းစွာရေးထားပါတယ်
-5. SSL error ဖြေရှင်းနည်းကိုပါ ထည့်ပေးထားပါတယ်
-6. License နဲ့ contact information တွေကိုလည်း ပြည့်စုံစွာထည့်ပေးထားပါတယ်
+
+1. Installation steps အားလုံးကို အစအဆုံးထည့်ပေးထားပါတယ်
+2. အသုံးပြုနည်းလမ်းညွှန်ကို ရှင်းလင်းစွာရေးထားပါတယ်
+3. SSL error ဖြေရှင်းနည်းကိုပါ ထည့်ပေးထားပါတယ်
+4. License နဲ့ contact information တွေကိုလည်း ပြည့်စုံစွာထည့်ပေးထားပါတယ်
